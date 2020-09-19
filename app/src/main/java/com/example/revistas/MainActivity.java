@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<revistas> lstRevis;
     ProgressDialog progress;
 
-    TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         recycleRevis =(RecyclerView)findViewById(R.id.recy);
 
         recycleRevis.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        txt=(TextView)findViewById(R.id.textView4);
+
 
 
         lstRevis =new ArrayList<revistas>();
@@ -96,22 +95,13 @@ public class MainActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
 
-                            Toast.makeText(MainActivity.this, "Error" +
-                                    " "+response, Toast.LENGTH_LONG).show();
-                            progress.hide();
+
                         }
                     }
-                },
-                new Response.ErrorListener() {
+                },new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        VolleyLog.e("Error: ", volleyError.getMessage());
-                        System.out.println();
-                        txt.setText(volleyError.toString());
-                        Toast.makeText(MainActivity.this, "Error" +
-                                " "+volleyError.toString(), Toast.LENGTH_LONG).show();
-                        Log.d("ERROR: ", volleyError.toString());
-                        progress.hide();
+
                     }
                 });
         queue.add(jsoreq);
