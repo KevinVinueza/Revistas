@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="8dp"
+        android:elevation="10dp"
+        android:layout_gravity="center_vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp">
+            <ImageView
+                android:id="@+id/img"
+                android:src="@drawable/ic_launcher_background"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                />
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#262626"
+                android:layout_below="@id/img"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Ciencia Sociales y Económicas"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/titulo"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:id="@+id/descrip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="descripcion de la revista "
+                    android:layout_below="@id/titulo"
+                    android:ellipsize="end"
+                    android:drawablePadding="10dp"/>
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
